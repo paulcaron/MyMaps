@@ -1,16 +1,18 @@
 package edu.stanford.pcaron.mymaps
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import edu.stanford.pcaron.mymaps.models.DisplayMapActivity
 import edu.stanford.pcaron.mymaps.models.Place
 import edu.stanford.pcaron.mymaps.models.UserMap
 import kotlinx.android.synthetic.main.activity_main.*
 
 const val EXTRA_USER_MAP = "EXTRA_USER_MAP"
+const val EXTRA_MAP_TITLE = "EXTRA_MAP_TITLE"
+private const val REQUEST_CODE = 1234
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +33,20 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
+
+        fabCreateMap.setOnClickListener {
+            Log.i(TAG, "Tap on FAB")
+            val intent = Intent(this@MainActivity, CreateMapActivity::class.java)
+            intent.putExtra(EXTRA_MAP_TITLE, "new map name")
+            startActivityForResult(intent, REQUEST_CODE)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            // Get new map data from the data
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun generateSampleData(): List<UserMap> {

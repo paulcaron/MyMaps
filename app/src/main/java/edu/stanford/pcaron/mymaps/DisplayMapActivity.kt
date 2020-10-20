@@ -1,4 +1,4 @@
-package edu.stanford.pcaron.mymaps.models
+package edu.stanford.pcaron.mymaps
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,8 +11,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import edu.stanford.pcaron.mymaps.EXTRA_USER_MAP
-import edu.stanford.pcaron.mymaps.R
+import edu.stanford.pcaron.mymaps.models.UserMap
 
 private const val TAG = "DisplayMapActivity"
 
