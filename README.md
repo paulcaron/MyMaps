@@ -17,7 +17,7 @@ The following **required** functionality is completed:
 The following **extensions** are implemented:
 
 * [x] Change the primary color to red.
-* [x] Add the possibility to revome any map by sliding to the right
+* [x] Add the possibility to remove any map by sliding to the right. To this extent, I followed [this tutorial](https://medium.com/@zackcosborn/step-by-step-recyclerview-swipe-to-delete-and-undo-7bbae1fce27e).
 
 ## Video Walkthrough
 
@@ -29,7 +29,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+To add the possibility to remove any map by sliding to the right, I had to create a new class. This class inherits from ItemTouchHelper.SimpleCallback which handles the flag callbacks when dragging and swiping. However, my implementation of maps removal is not persistent.
 
 ## License
 
